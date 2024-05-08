@@ -1,0 +1,104 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.background-image{
+	background-image: url("/library/img/library_background.jpg");
+	background-size: cover;
+	height: 100vh;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.membersignupbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 550px;
+	height: 510px;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+	font-family: Helvetica, sans-serif;
+	font-size: 40px;
+}
+
+.memberloginbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 550px;
+	height: 430px;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+	font-family: Helvetica, sans-serif;
+	font-size: 40px;
+}
+
+.librarianloginbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 550px;
+	height: 360px;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+	font-family: Helvetica, sans-serif;
+	font-size: 40px;
+}
+
+#button {
+	font-size: 20px;
+	color: white;
+	background: crimson;
+	border: 2px solid rgb(37, 34, 34);
+	border-radius: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	margin: 0 40px;
+}
+
+#button:hover {
+	background-color: grey; /* Add a grey background on hover */
+}
+
+h3 {
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	font-family:Papyrus, fantasy;
+}
+
+body{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+}
+
+.field {
+	color: white;
+	font-size: 30px;
+	text-align: left;
+}
+
+#textboxid {
+	height: 30px;
+	width: 290px;
+	font-size: 13pt;
+}
+
+.tips{
+	color: white;
+	opacity: 0.4;
+	font-style: italic;
+	font-size: 16px;
+}

@@ -1,0 +1,134 @@
+CREATE DATABASE library;
+USE library;
+
+CREATE TABLE book(
+	id VARCHAR(6) PRIMARY KEY DEFAULT '0',
+	name VARCHAR(100),
+	author VARCHAR(50),
+	quantity INT(3)
+);
+CREATE TABLE member(
+	id VARCHAR(6) PRIMARY KEY DEFAULT '0',
+	password VARCHAR(50),
+	name VARCHAR(50),
+	email VARCHAR(50),
+	phone VARCHAR(13)
+);
+CREATE TABLE librarian(
+	id VARCHAR(6) PRIMARY KEY DEFAULT '0',
+	password VARCHAR(50),
+	name VARCHAR(50),
+	email VARCHAR(50),
+	phone VARCHAR(13)
+);
+CREATE TABLE record(
+	id VARCHAR(6) PRIMARY KEY DEFAULT '0',
+	book_id VARCHAR(6),
+	member_id VARCHAR(6),
+	FOREIGN KEY (book_id) REFERENCES book(id),
+	FOREIGN KEY (member_id) REFERENCES member(id),
+	issue_date VARCHAR(50),
+	return_date DATE,
+	returned BOOLEAN
+);
+
+CREATE TABLE book_seq(
+	id INT AUTO_INCREMENT PRIMARY KEY
+);
+DELIMITER $$
+CREATE TRIGGER tg_book_insert
+BEFORE INSERT ON book
+FOR EACH ROW
+BEGIN
+  INSERT INTO book_seq VALUES (NULL);
+  SET NEW.id = CONCAT('B', LPAD(LAST_INSERT_ID(), 5, '0'));
+END$$
+DELIMITER ;
+
+CREATE TABLE member_seq(
+	id INT AUTO_INCREMENT PRIMARY KEY
+);
+DELIMITER $$
+CREATE TRIGGER tg_member_insert
+BEFORE INSERT ON member
+FOR EACH ROW
+BEGIN
+  INSERT INTO member_seq VALUES (NULL);
+  SET NEW.id = CONCAT('M', LPAD(LAST_INSERT_ID(), 5, '0'));
+END$$
+DELIMITER ;
+
+CREATE TABLE librarian_seq(
+	id INT AUTO_INCREMENT PRIMARY KEY
+);
+DELIMITER $$
+CREATE TRIGGER tg_librarian_insert
+BEFORE INSERT ON librarian
+FOR EACH ROW
+BEGIN
+  INSERT INTO librarian_seq VALUES (NULL);
+  SET NEW.id = CONCAT('L', LPAD(LAST_INSERT_ID(), 5, '0'));
+END$$
+DELIMITER ;
+
+CREATE TABLE record_seq(
+	id INT AUTO_INCREMENT PRIMARY KEY
+);
+DELIMITER $$
+CREATE TRIGGER tg_record_insert
+BEFORE INSERT ON record
+FOR EACH ROW
+BEGIN
+  INSERT INTO record_seq VALUES (NULL);
+  SET NEW.id = CONCAT('R', LPAD(LAST_INSERT_ID(), 5, '0'));
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER tg_afterissuebook
+AFTER INSERT ON record
+FOR EACH ROW 
+BEGIN
+UPDATE book SET quantity = quantity-1 
+WHERE book.id = NEW.book_id;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER tg_afterreturnbook
+AFTER UPDATE ON record
+FOR EACH ROW
+BEGIN
+UPDATE book SET quantity = quantity+1 
+WHERE book.id = OLD.book_id
+AND OLD.returned = 0
+AND NEW.returned = 1;
+END$$
+DELIMITER ;
+
+INSERT INTO `book`(`name`, `author`, `quantity`) 
+VALUES 
+('C++ For Dummies','Stephen R. Davis','3');
+
+INSERT INTO `librarian`(`password`, `name`, `email`, `phone`) 
+VALUES 
+('abc123','Theng Yuan Yuan','1191100477@student.mmu.edu.my','01115050811');
+
+INSERT INTO `member`(`password`, `name`, `email`, `phone`) 
+VALUES 
+('password','Donald Trump','donald@gmail.com','01112223333');
+
+INSERT INTO `record`(`book_id`, `member_id`, `issue_date`, `return_date`, `returned`) 
+VALUES 
+('B00001','M00001',CURRENT_DATE(), DATE_ADD(now(),interval 5 day) ,false);
+
+INSERT INTO `book`(`name`, `author`, `quantity`) 
+VALUES 
+("Harry Potter and the Philosopher's Stone",'J. K. Rowling','3'),
+('Harry Potter and the Chamber of Secrets','J. K. Rowling','3'),
+('Harry Potter and the Prisoner of Azkaban','J. K. Rowling','3'),
+('Harry Potter and the Goblet of Fire','J. K. Rowling','3'),
+('Harry Potter and the Order of the Phoenix','J. K. Rowling','3'),
+('Harry Potter and the Half-Blood Prince','J. K. Rowling','3'),
+('Harry Potter and the Deathly Hallows','J. K. Rowling','3'),
+('Harry Potter and the Cursed Child - Parts One and Two','J. K. Rowling','3');

@@ -1,0 +1,354 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.background-image{
+	background-image: url("/library/img/library_background.jpg");
+	background-size: cover;
+	height: 100vh;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.newarrivedbookbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.bookdetailsbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.authorbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.profilebox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 600px;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.booklistbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.issuerecordbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.recorddetailsbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.addbookbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 600px;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.memberlistbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 800px;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.librarianlistbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.addlibrarianbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 700px;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.changepasswordbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: 720px;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.memberdetailsbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.librariandetailsbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.recorddetailsbox {
+	display: block;
+	padding: 5px;
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	width: auto;
+	height: auto;
+	padding: 10px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+h3 {
+	font-family:Papyrus, fantasy;
+	text-align: left;
+	font-size: 25px;
+}
+
+h1 {
+	font-family:Papyrus, fantasy;
+	font-size: 50px;
+}
+
+.field {
+	color: white;
+	font-size: 30px;
+	text-align: left;
+}
+
+#member_id, #name, #author, #quantity, #email, #phone, #record_id, #book_id, 
+#book_name, #issue_date, #return_date, #returned, #librarian_id, #textboxid,
+#member_name {
+	height: 30px;
+	width: 290px;
+	font-size: 13pt;
+}
+
+#btn_editprofile, #btn_saveprofile, #btn_cancelprofile, #btn_issueBook, #btn_returnBook,
+#button, #btn_edit, #btn_save, #btn_cancel, #btn_delete {
+	font-size: 20px;
+	color: white;
+	background: crimson;
+	border: 2px solid rgb(37, 34, 34);
+	border-radius: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	margin: auto;
+}
+
+#btn_returnBook, #button:hover {
+	background-color: grey; /* Add a grey background on hover */
+}
+
+#info {
+	text-align: left;
+}
+
+.sidebar {
+  margin: 0;
+  width: 120px;
+  background-color: black;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+ 
+.sidebar a.active {
+  background-color: gold;
+  color: black;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: white;
+  color: black;
+}
+
+.topbar {
+  width:100%;
+  margin:0;
+  background-color: black;
+  position: fixed;
+  overflow: auto;
+  top:0;
+}
+
+.topbar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.topbar a:hover:not(.active) {
+  color: gold;
+}
+
+a:link {
+	color: white;
+}
+
+div.content {
+  margin-left: 120px;
+  margin-top: 50px;
+  text-align: center;
+  padding: 1px 16px;
+  color: white;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top:50px;
+  }
+  .sidebar a {float: left;}
+  div.content {
+    margin-left: 0;
+    margin-top:100px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+}
+
+.search select{
+  background-color: white;
+  font-size: 25px;
+}
+.search input[type="text"]{
+  background-color: rgb(255, 255, 255);
+  font-size: 25px;
+}
+.search input[type="submit"]{
+	font-size: 20px;
+	color: white;
+	background: crimson;
+	border: 2px solid rgb(37, 34, 34);
+	border-radius: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	margin: auto;
+}
+
+.search input[type="submit"]:hover {
+	background-color: grey; /* Add a grey background on hover */
+}

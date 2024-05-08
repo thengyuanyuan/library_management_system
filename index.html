@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+	   <title>Library Management System</title>
+	   <style type=text/css>
+	   
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	   
+		.background-image{
+			background-image: url("img/library_background.jpg");
+			background-size: cover;
+			min-height: 100%;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+		}
+		
+		h1 {
+			font-family:'Brush Script MT', cursive;
+			color: white;
+			text-align: center;
+			font-size: 70px;
+		}
+		
+		h3 {
+			color: white;
+			text-align: center;
+			font-size: 50px;
+			font-family:Papyrus, fantasy;
+		}
+		
+		.memberbox, .librarianbox {
+			display: inline-block;
+			padding: 5px;
+			background-color: #000;
+			background: rgba(0, 0, 0, 0.6);
+			width: 500px;
+			height: 130px;
+			padding: 10px;
+			margin: 0 15px;
+			position: relative; 
+			border-radius: 10px;
+			font-family: Helvetica, sans-serif;
+			font-size: 30px;
+		}
+		
+		#button {
+			font-size: 20px;
+			color: white;
+			background: crimson;
+			border: 2px solid rgb(37, 34, 34);
+			border-radius: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-right: 10px;
+			padding-left: 10px;
+			cursor: pointer;
+		}
+		
+		#button:hover {
+			background-color: grey; /* Add a grey background on hover */
+		}
+		
+		img {
+		  vertical-align: middle;
+		}
+
+		/* Position the image container (needed to position the left and right arrows) */
+		.container {
+		  position: relative;
+		}
+
+		/* Hide the images by default */
+		.mySlides {
+		  display: none;
+		}
+
+		/* Add a pointer when hovering over the thumbnail images */
+		.cursor {
+		  cursor: pointer;
+		}
+
+		/* Next & previous buttons */
+		.prev,
+		.next {
+		  cursor: pointer;
+		  position: absolute;
+		  top: 40%;
+		  width: auto;
+		  padding: 16px;
+		  margin-top: -50px;
+		  color: white;
+		  font-weight: bold;
+		  font-size: 20px;
+		  border-radius: 0 3px 3px 0;
+		  user-select: none;
+		  -webkit-user-select: none;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+		  right: 0;
+		  border-radius: 3px 0 0 3px;
+		}
+		
+		.prev {
+		  left: 0;
+		  border-radius: 3px 0 0 3px;
+		}
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover,
+		.next:hover {
+		  background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		/* Number text (1/7 etc) */
+		.numbertext {
+		  color: #f2f2f2;
+		  font-size: 12px;
+		  padding: 8px 12px;
+		  position: absolute;
+		  top: 0;
+		}
+
+		/* Container for image text */
+		.caption-container {
+		  text-align: center;
+		  background-color: #222;
+		  padding: 2px 16px;
+		  color: white;
+		  font-size: 25px;
+		  font-family: Garamond, serif;
+		}
+
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+
+		/* 7 columns side by side */
+		.column {
+		  float: left;
+		  width: 14.28%;
+		}
+
+		/* Add a transparency effect for thumnbail images */
+		.demo {
+		  opacity: 0.6;
+		}
+
+		.active,
+		.demo:hover {
+		  opacity: 1;
+		}
+		
+	   </style>
+	   
+	   <script type="text/javascript">
+	   
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+		
+	   </script>
+	   
+   </head>
+   
+	<body>	
+	<div class="background-image">
+	
+	<h1>Welcome to Library Management System</h1><br>
+	
+	<h3>Our Classic Collection<h3>
+	
+	<div class="container">
+
+	<div class="mySlides">
+	  <div class="numbertext">1 / 7</div>
+	  <img src="img/book1.jpg" style="width:15%">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">2 / 7</div>
+	  <img src="img/book2.jpg" style="width:15%">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">3 / 7</div>
+	  <img src="img/book3.jpg" style="width:15%">
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">4 / 7</div>
+	  <img src="img/book4.jpg" style="width:15%">
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">5 / 7</div>
+	  <img src="img/book5.jpg" style="width:15%">
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">6 / 7</div>
+	  <img src="img/book6.jpg" style="width:15%">
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">7 / 7</div>
+	  <img src="img/book7.jpg" style="width:15%">
+	</div>
+	
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+	 <div class="caption-container">
+		<p id="caption"></p>
+	  </div>
+
+	  <div class="row">
+		<div class="column">
+		  <img class="demo cursor" src="img/book1.jpg" style="width:50%" onclick="currentSlide(1)" alt="Python Programming">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img/book2.jpg" style="width:50%" onclick="currentSlide(2)" alt="Computer Programming For Beginners">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img/book3.jpg" style="width:50%" onclick="currentSlide(3)" alt="C++">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img/book4.jpg" style="width:50%" onclick="currentSlide(4)" alt="Harry Potter And The Deathly Hallows">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img/book5.jpg" style="width:50%" onclick="currentSlide(5)" alt="Alice In Wonderland">
+		</div>    
+		<div class="column">
+		  <img class="demo cursor" src="img/book6.jpg" style="width:50%" onclick="currentSlide(6)" alt="Frozen Polar Nights Cast Into Darkness">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img/book7.jpg" style="width:50%" onclick="currentSlide(7)" alt="Ethical Hacking">
+		</div>
+	  </div>
+	</div>
+	
+	<br><br>
+	
+	<div class="box memberbox">
+	Member Login<br><br>
+	<a href="member_login.php">
+    <button id=button>Member Login</button>
+	</a>
+	
+	<a href="member_signup.php">
+    <button id=button>Member Sign Up</button>
+	</a>
+	</div>
+	
+	<div class="box librarianbox">
+	Librarian Login<br><br>
+	<a href="/library/librarian_login.php">
+    <button id=button>Librarian Login</button>
+	</a>
+	</div>
+	
+	<br><br>
+	</div>
+	</body>
+</html>
